@@ -1,4 +1,4 @@
-FROM  --platform=linux/arm64/v8 ubuntu:22.04
+FROM --platform=linux/arm64 ubuntu:22.04
 MAINTAINER GitLab Inc. <support@gitlab.com>
 
 ARG RELEASE_PACKAGE=gitlab-ce
