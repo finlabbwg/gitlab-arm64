@@ -1,4 +1,5 @@
-FROM --platform=linux/arm64/v8 ubuntu:23.04
+# syntax=docker/dockerfile:1
+FROM --platform=linux/arm64 ubuntu:23.04
 MAINTAINER GitLab Inc. <support@gitlab.com>
 
 ARG RELEASE_PACKAGE=gitlab-ce
