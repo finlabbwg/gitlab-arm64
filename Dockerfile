@@ -1,5 +1,8 @@
-FROM --platform=linux/arm64 ubuntu:22.04
+FROM --platform=$BUILDPLATFORM ubuntu:22.04
 MAINTAINER GitLab Inc. <support@gitlab.com>
+
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
 
 ARG RELEASE_PACKAGE=gitlab-ce
 ARG RELEASE_VERSION=15.11.12-ce.0
