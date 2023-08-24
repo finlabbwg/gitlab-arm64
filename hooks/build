@@ -1,6 +1,4 @@
 #!/bin/bash
-
-cd ..
-
+pwd
 #TODO: Add --squash --platform arm options when Docker Hub daemon supports them
-docker buildx build --platform linux/arm64 -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+docker buildx build --platform linux/arm64 -t $IMAGE_NAME .
