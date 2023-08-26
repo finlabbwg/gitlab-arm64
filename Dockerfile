@@ -9,6 +9,20 @@ SHELL ["/bin/sh", "-c"]
 
 # Default to supporting utf-8
 ENV LANG=C.UTF-8
+ENV DEBIAN_FRONTEND noninteractive
+ENV TZ 'Asia/Seoul'
+
+RUN echo $TZ > /etc/timezone && \
+apt-get update && apt-get install -y locales tzdata && \
+rm /etc/localtime && \
+ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+dpkg-reconfigure -f noninteractive tzdata
+
+# set locale en_US.UTF-8
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
 
 # Install required packages
 RUN apt-get update -q \
@@ -19,7 +33,7 @@ RUN apt-get update -q \
       tzdata \
       wget \
       perl \
-      libperl5.34 \
+      libperl5.36 \
       libatomic1 \
     && rm -rf /var/lib/apt/lists/*
 
