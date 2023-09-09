@@ -2,7 +2,7 @@ FROM --platform=linux/arm64/v8 ubuntu:23.04
 MAINTAINER GitLab Inc. <support@gitlab.com>
 
 ARG RELEASE_PACKAGE=gitlab-ce
-ARG RELEASE_VERSION=15.11.12-ce.0
+ARG RELEASE_VERSION=16.0.8-ce.0
 ARG RELEASE_ARCH
 
 SHELL ["/bin/sh", "-c"]
